@@ -1,19 +1,19 @@
-<?php 
+<?php
 if(isset($_POST['login'])){
     session_start();
     ob_start();
     require_once('includes/logInUser.inc.php');
 }?>
 
-<link href="css/mainRecruitingStyles.css" rel="stylesheet" type="text/css" />
-<link href="css/header_homepageStyles.css" rel="stylesheet" type="text/css">
+<link href="css/old/mainRecruitingStyles.css" rel="stylesheet" type="text/css" />
+<link href="css/old/header_homepageStyles.css" rel="stylesheet" type="text/css">
 
 <div id="container">
   <div id="headerMain"> <a href="<?php echo $_SERVER['SERVER_ROOT'].'/salesTest/index.php'; ?>"><img id="banner" src="images/header_LogoRedBackground.png" width="1024" height="150" alt="GreatMoods: Great Fundraising!" /> 		  </a>
   <img id="collage" src="images/Header-Banner_Homepage-Collage.png" width="1024" height="150" alt=Photo Collage" />
     <div id="menuWrapper"> </div>
     <!--end menuWrapper-->
-    
+
         <div id="login">
         <?php
             if(!isset($_SESSION['LOGIN']) || $_SESSION['LOGIN'] == "FALSE") {
@@ -28,14 +28,14 @@ if(isset($_POST['login'])){
                 echo '<p class="forgotpw"><a href="">Forgot Password?</a><br />';
                 echo '<a href="">Register Now</a></p>';
                 echo '</div>';
-                
+
             } elseif($_SESSION['LOGIN'] == "TRUE") {
                 include('includes/logout.inc.php');
               }
          ?>
       </div>
-    <!--end login--> 
-    
+    <!--end login-->
+
     <div id="mainNav">
       <ul id="menuSample">
         <li><a href="index.php">GreatMoods<br>Homepage</a></li>
@@ -219,8 +219,7 @@ if(isset($_POST['login'])){
       </ul>
     </div>
     <!--end mainNav-->
-    
+
 
   </div>
   <!--end headerMain-->
-  

@@ -60,7 +60,7 @@ h1,h2,h3,h4,h5,h6,p,ul,label,input{
 }
 	#contentSample #column1{ left: 0; width: 835px; float: left; }
 	#contentSample #column2{ width: 160px; margin-left: 10px; float: left; }
-	
+
 #contentSample2{
 	margin: -26px 0 0 0;
 	padding:0;
@@ -91,7 +91,7 @@ h1,h2,h3,h4,h5,h6,p,ul,label,input{
 	margin-left:30px;
 	float:left;
 	}
-	
+
 hr{
 	border: 0;
     	background: #ccc;
@@ -235,7 +235,7 @@ ul .stumenu {
 .shoppingIdeas ul h5{
 	font-size: 1.2em;
 	padding: 10px 0 10px 0;
-	
+
 }
 
 .shoppingIdeas ul li a {
@@ -249,7 +249,7 @@ ul .stumenu {
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	
+
 }
 	.bestsellers h5{ font-weight: bold; }
 
@@ -307,123 +307,123 @@ ul .stumenu {
 
 /*Storefront Rows*/
 .storerow {
-	display: table-row; 
+	display: table-row;
 	height: 88px;
 }
 .storerow h3{
-	display: table-cell; 
-	width: 75px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 75px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 	text-align: center;
 }
 .storerow2 {
-	display: table-row; 
+	display: table-row;
 	height: 60px;
 }
 .storerow3 {
-	display: table-row; 
+	display: table-row;
 	height: 25px;
 }
 
 /*Storefront Cells*/
 .storecell {
-	display: table-cell; 
-	width: 75px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 75px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #fashionstoretable .storecell {
-	display: table-cell; 
-	width: 60px; 
-	margin: 0px; 
-	padding: 1px 1px; 
+	display: table-cell;
+	width: 60px;
+	margin: 0px;
+	padding: 1px 1px;
 	line-height: .9;
 }
 #jewelrystoretable .storecell {
-	display: table-cell; 
-	width: 75px; 
-	margin: 0px 2px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 75px;
+	margin: 0px 2px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #fitnessstoretable .storecell {
-	display: table-cell; 
-	width: 70px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 70px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #spastoretable .storecell {
-	display: table-cell; 
-	width: 85px; 
-	margin: 0px 3px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 85px;
+	margin: 0px 3px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #coffeestoretable .storecell {
-	display: table-cell; 
-	width: 90px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 90px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #sportstoretable .storecell {
-	display: table-cell; 
-	width: 70px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 70px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #sportstoretable .storecell2 {
-	display: table-cell; 
-	width: 100px; 
-	margin: 0; 
-	padding: 1px 5px 1px 2px; 
+	display: table-cell;
+	width: 100px;
+	margin: 0;
+	padding: 1px 5px 1px 2px;
 	line-height: .9;
 }
 #sportstoretable .storecell3 {
-	display: table-cell; 
-	width: 90px; 
-	margin: 0; 
-	padding: 1px 5px 1px 2px; 
+	display: table-cell;
+	width: 90px;
+	margin: 0;
+	padding: 1px 5px 1px 2px;
 	line-height: .9;
 }
 #manstoretable .storecell {
-	display: table-cell; 
-	width: 100px; 
-	margin: 0px; 
-	padding: 1px 4px; 
+	display: table-cell;
+	width: 100px;
+	margin: 0px;
+	padding: 1px 4px;
 	line-height: .9;
 }
 #romanticstoretable .storecell {
-	display: table-cell; 
-	width: 90px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 90px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #familystoretable .storecell {
-	display: table-cell; 
-	width: 100px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 100px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #pursestoretable .storecell {
-	display: table-cell; 
-	width: 80px; 
-	margin: 0px; 
-	padding: 1px 2px; 
+	display: table-cell;
+	width: 80px;
+	margin: 0px;
+	padding: 1px 2px;
 	line-height: .9;
 }
 #chocolatestoretable .storecell2 {
-	display: table-cell; 
-	width: 50px; 
-	margin: 0px; 
-	padding: 1px 0px; 
+	display: table-cell;
+	width: 50px;
+	margin: 0px;
+	padding: 1px 0px;
 	line-height: .9;
 }
 
@@ -521,13 +521,13 @@ table.giftitems tr td#right{
 /*****LIST & LINKS*****/
 a:link {
 	color:#414958;
-	text-decoration: underline; 
+	text-decoration: underline;
 }
 a:visited {
 	color: #4E5869;
 	text-decoration: underline;
 }
-a:hover, a:active, a:focus { 
+a:hover, a:active, a:focus {
 	text-decoration: none;
 }
 
@@ -567,7 +567,7 @@ list-style:disc;
 	padding-bottom: 1.8em;
 	}
 #redtxt { color:#cc0000; font-size: larger; }
-	
+
 #leadBox{ width:100%; padding: .5em 0 0 0; }
 #contentSample2 #leadBox { width: 100%; padding: 0; }
 
@@ -652,7 +652,7 @@ h5.alignToTop {
 	padding-bottom: .5em;
 	padding-left: 4px;
 	padding-top: 0px
-	}	
+	}
 #photoSmallRt{
 	width: 160px;
 	height: 150px;
@@ -678,7 +678,7 @@ h5.alignToTop {
 img#icons{
 	margin-left: 170px;
 }
-		
+
 /*Placeholders for photos, video, etc.
 */
 #placeholder{
@@ -708,10 +708,10 @@ img#icons{
 	background-color:#999;
 	width: 170px;
 	height: 220px;
-	margin: 0px 20px 20px 0; 
+	margin: 0px 20px 20px 0;
 	text-align: center;
 	float: left;
-	}	
+	}
 #placeholderRight{
 	background-color:#999;
 	height: 200px;
@@ -726,7 +726,7 @@ img#icons{
 	background-color: #CCC;
 	width: 415px;
 	margin: 5px 0px 5px 0px;
-	
+
 }
 .contactus table{
 	margin: 5px 5px 5px 5px;
@@ -749,7 +749,7 @@ form #comment{
 	margin: 5px 5px 0px 5px;
 	padding: 0;
 	float: left;
-	
+
 }
 .contactus form table th{
 	margin: 5px 0px 5px 5px;
@@ -760,7 +760,7 @@ form #comment{
 	font-size: .8em;
 }
 form input#mailbutton{
-	border:thin solid #777;	
+	border:thin solid #777;
 	-moz-border-radius: 7px 7px 7px 7px;
 	-webkit-border-radius: 7px 7px 7px 7px;
 	border-radius: 7px 7px 7px 7px;
@@ -836,7 +836,7 @@ label#remove{
 	font-weight: 500;
 }
 input#savebutton{
-	border:thin solid #777;	
+	border:thin solid #777;
 	-moz-border-radius: 7px 7px 7px 7px;
 	-webkit-border-radius: 7px 7px 7px 7px;
 	border-radius: 7px 7px 7px 7px;
@@ -863,10 +863,10 @@ h3.sample{
 	font-weight: bold;
 }
 
-.grpcollage{ 
-	width: 825px; 
+.grpcollage{
+	width: 825px;
 	height: 258px;
-	margin-bottom: 5px; 
+	margin-bottom: 5px;
 	background-color: #000;
 	padding: 5px;
 }
@@ -922,7 +922,7 @@ h3.mallHeader {
 	margin: -240px 15px 10px 0;
 	padding: 10px 0 10px 0;
 	text-align: center;
-	
+
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color:#CCCCCC;
@@ -943,7 +943,7 @@ table#basketphotos td{
 	line-height: 1.1em;
 	width: 124px;
 	height: 120px
-	text-align: center;		
+	text-align: center;
 	}
 #col1{
 	left: 0;
@@ -969,7 +969,7 @@ table#basketphotos td{
 	list-style-type: inside;
 	font-size: .8em;
 	width: 100%;
-}		
+}
 
 h5#reasons {
 	margin-top: 0px;
@@ -998,7 +998,7 @@ ul.reasons {
 	line-height: 1.2em;
 }
 #setupreasons input[type="checkbox"]{
-	
+
 }
 #setupreasons input[type="text"]{
 	width: 300px;
@@ -1017,7 +1017,7 @@ ul.reasons {
 	}
 
 .redtext { color: #cc0000; }
-	
+
 .contactinfobox{
 	margin: 5px 5px 0 0;
 	padding: 10px;
@@ -1028,7 +1028,7 @@ ul.reasons {
 	position: relative;
 }
 	.contactinfobox p { margin-left: 0; font-size: .8em; }
-	
+
 .contactinfo1{
 	margin: 0;
 	padding: 0 4px 5px 0;
@@ -1081,7 +1081,7 @@ img.dropshadow {
 	}
 
 
-	
+
 .contactinfo1-student{
 	margin: 0 0 0 10px;
 	padding: 0 0 5px 0;
@@ -1107,7 +1107,7 @@ p.studentnote-student{
 	height: 60px;
 	overflow:auto;
 	}
-	
+
 .reasonsbox{
 	margin: 0;
 	padding: 10px;
@@ -1166,7 +1166,7 @@ ul .stumenu2 {
 /**END GETTING STARTED**/
 /***********************/
 
-#download{ 
+#download{
 	float: left;
 	margin: 0 5px;
 }
