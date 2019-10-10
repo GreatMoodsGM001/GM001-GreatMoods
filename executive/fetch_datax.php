@@ -22,8 +22,8 @@
      {
        //echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
        echo'<tr class="odd"><td>'.$row['FName'].'</td><td>'.$row['LName'].'</td><td>'.$row['homePhone'].'</td><td>'.$row['email'].'</td><td>'.$row['role'].'</td><td>
-                                        <a href="#"><input class="redbutton" type="button" value="Edit Acct" /></a>
-					<a href="#"><input class="redbutton" type="button" value="View Accts" /></a>
+                                        <a href="editAccount.php"><input class="redbutton" type="button" value="Edit Acct" /></a>
+					<a href="viewAccounts.php"><input class="redbutton" type="button" value="View Accts" /></a>
 					<!--<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>-->
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a></td></tr>';
      }

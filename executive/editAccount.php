@@ -14,12 +14,12 @@
       $table1 = "user_info";
       $table2 = "users";
       $table3 = "distributors";
-      
+
       //get info fo logged in user
       $query = "SELECT * FROM $table1 WHERE userInfoID='$id'";
       $result = mysqli_query($link, $query)or die("MySQL ERROR on query 1: ".mysqli_error($link));
       $row = mysqli_fetch_assoc($result);
-      
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -35,21 +35,21 @@
           <h1>Edit My Account</h1>
           <?php echo $id; ?>
           <h3></h3>
-		
+
 	<div class="table">
 		<form class="" action="editAccount.php" >
-			
+
 		<div class="simpleTabs">
 			<!--<ul class="simpleTabsNavigation">
 				<li><a href="#">Information</a></li>
 				<li><a href="#">Account Login</a></li>
 				<li><a href="#">Profile Photo</a></li>
 			</ul>-->
-			
+
 			<div class="interim-form">
 				<div class="interim-header"><h2>Contact Information</h2></div>
 				<div class="tablerow"> <!-- titles -->
-				        <span id="hd_cname">Company</span>									
+				        <span id="hd_cname">Company</span>
 					<span id="hd_fname">First</span>
 					<!--<span id="hd_mname">Middle</span>-->
 					<span id="hd_lname">Last</span>
@@ -72,7 +72,7 @@
 						<option value="">Rev.</option>
 					</select>
 				</div> <!-- end row -->
-								
+
 				<table>
 	                            	<tr>
 	                                	<td id="td_1">
@@ -176,7 +176,7 @@
                         			</td>
                         		</tr>
                       		</table>
-                      		
+
                       		<!--<div class="tablerow"> <!-- titles -->
 								<!--<span id="hd_bday">Birthday</span>
 								<span id="hd_gender">Gender</span>
@@ -342,32 +342,32 @@
 						</select>
 					</div> <!-- end row -->
 				</div> <!-- end tab1 content -->
-						
-			
+
+
 
 			<div class="interim-form">
 				<div class="interim-header"><h2>Profile Photo</h2></div>
-				<div class="tablerow"> 
+				<div class="tablerow">
 					<span>Upload Profile Photo:</span><input type="file">
 					<input type="submit" class="redbutton" value="Upload Photo">
 				</div> <!-- end row -->
 				<br>
-				<div class="tablerow"> 
+				<div class="tablerow">
 					<span>Current Image:<span><br>
 					<img src="../<?php echo $row['picPath']; ?>" alt="Profile Pic">
 				</div> <!-- end row -->
 			</div> <!-- end tab5 content -->
 		</div> <!-- end simple tabs -->
-		
+
 		<input type="submit" class="redbutton" value="Save Changes">
-		
+
 		</form>
 	</div> <!-- end table -->
 	<br>
 
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>

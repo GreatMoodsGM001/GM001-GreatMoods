@@ -74,7 +74,7 @@
 		</div> <!-- end table -->
 
 		<!-- This alphabet should allow for sorting the data -->
-		<table id="alphabet">
+		<!--<table id="alphabet">
 			<tr>
 				<td>A</td>
 				<td>B</td>
@@ -103,7 +103,7 @@
 				<td>Y</td>
 				<td>Z</td>
 			</tr>
-		</table>
+		</table>-->
 
 		<table id="gms_accts">
 			<tr>

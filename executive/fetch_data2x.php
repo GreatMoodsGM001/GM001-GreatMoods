@@ -23,7 +23,7 @@
        //populate table with data
        //echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
        echo'<tr class="odd"><td align="center">'.$row['FName'].'</td><td>'.$row['LName'].'</td><td>'.$row['homePhone'].'</td><td>'.$row['email'].'</td><td>'.$row['role'].'</td><td>
-                                        <!--<a href="#"><input class="redbutton" type="button" value="Edit Acct" /></a>-->
+                                        <!--<a href="editAccount.php"><input class="redbutton" type="button" value="Edit Acct" /></a>-->
                                         <form action="editAccount.php" method="post">
                                         <input type="hidden" name="scid" value="'.$row[loginid].'" />
                                         <input type="submit" name="submit" class="redbutton" value="Edit Acctx" />
