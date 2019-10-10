@@ -21,7 +21,7 @@
 <head>
 	<title>GreatMoods | Executive</title>
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
-  <meta name=”viewport” content=”width=device-width, initial-scale=1″> <!-- ADDED TO MAKE RESPONSIVE !-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewpoint from device size -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 
