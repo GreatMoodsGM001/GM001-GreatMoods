@@ -61,7 +61,7 @@
 	$linkedin = mysqli_real_escape_string($link, $_POST['lindkedin']);
 	$loginPass = mysqli_real_escape_string($link, $_POST['loginpass']);
 	$salesMan = 25403;
-	$id = 123;
+	$id = $userID;
 	$ftin = mysqli_real_escape_string($link, $_POST['ftin1']);
 	$stin = mysqli_real_escape_string($link, $_POST['stin1']);
 	$nonp = mysqli_real_escape_string($link, $_POST['nonp1']);
