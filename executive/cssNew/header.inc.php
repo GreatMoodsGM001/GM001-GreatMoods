@@ -1,12 +1,3 @@
-<?php
-if(isset($_POST['login'])){
-    session_start();
-    ob_start();
-    require_once('logInUser.inc.php');
-
-}
-?>
-
 <head>
   <meta charset="UTF-8">
   <meta name="wot-verification" content="afd275378407e34df6ec"/>
@@ -30,7 +21,7 @@ if(isset($_POST['login'])){
   <!-- top navigation styles -->
   <link rel="preload" href="css2/main_nav.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="css2/main_nav.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
 	<!-- jQuery (required)
 	**ALL OTHER CDNS LOCATED IN FOOTER, AS FOOTERS ARE ALWAYS LOCATED BEFORE BODY CLOSING TAG - the ideal spot of JS/jQuery**
 	*For some reason jasny needs jquery listed in header as well to allow for sidenav dropdowns to collapse correctly ? -->
@@ -328,7 +319,7 @@ $(".row .thumbnail").click(function(){
               <?php include 'menu/menu_kids.php'; ?>
           </li>
           <li class="dropdown"  id="mainCategoryType">
-            <a "greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Fitness/c/18209624/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Fitness <span class="sr-only"></span> </a>
+            <a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Fitness/c/18209624/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Fitness <span class="sr-only"></span> </a>
             <?php include 'menu/menu_fitness.php'; ?>
           </li>
 
