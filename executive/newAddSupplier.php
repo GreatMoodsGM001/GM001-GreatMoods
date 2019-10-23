@@ -14,7 +14,7 @@
 <base href="../"> <!-- allows the hrefs to redirect to root (example in php) -->
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
   <link rel="stylesheet"type="text/css" href="executive/cssNew/newAddSupplier.css">
-  <meta http-equiv="refresh" content="15">
+  <meta http-equiv="refresh" content="15"> <!-- This code will refresh the page every 15 seconds>
 </head>
  <body>
 
