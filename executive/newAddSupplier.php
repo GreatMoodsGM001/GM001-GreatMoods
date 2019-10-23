@@ -19,7 +19,7 @@
  <body>
 
 <?php include 'cssNew/header.inc.php' ; ?>
-
+<?php include 'sidenav.php' ; ?>
 
 <div class="container">
       <!--</?php include 'sidenav.php' ; ?> -->
