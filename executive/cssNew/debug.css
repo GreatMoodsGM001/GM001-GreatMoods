@@ -1,3 +1,4 @@
+/* To turn on the Debug code, href it in to the head of the wanted html */
 body * {
   color: hsla(210, 100%, 100%, 0.88) !important;
   background: hsla(210, 100%, 50%, 0.33) !important;
