@@ -24,11 +24,12 @@
 <!DOCTYPE html>
 <head>
 	<title>GreatMoods | Executive</title>
+  <base href="../">
 </head>
 
 <body>
 <div id="container">
-      <?php include 'header.inc.php' ; ?>
+      <?php include 'cssNew/header.inc.php' ; ?>
       <?php include 'sidenav.php' ; ?>
 
       <div id="content">
@@ -36,146 +37,7 @@
           <?php echo $id; ?>
           <h3></h3>
 
-	<div class="table">
-		<form class="" action="editAccount.php" >
 
-		<div class="simpleTabs">
-			<!--<ul class="simpleTabsNavigation">
-				<li><a href="#">Information</a></li>
-				<li><a href="#">Account Login</a></li>
-				<li><a href="#">Profile Photo</a></li>
-			</ul>-->
-
-			<div class="interim-form">
-				<div class="interim-header"><h2>Contact Information</h2></div>
-				<div class="tablerow"> <!-- titles -->
-				        <span id="hd_cname">Company</span>
-					<span id="hd_fname">First</span>
-					<!--<span id="hd_mname">Middle</span>-->
-					<span id="hd_lname">Last</span>
-					<!--<span id="hd_pname" title="Preferred First Name">Preferred</span>-->
-                            		<span id="hd_title">Title</span>
-				</div> <!-- end row -->
-				<div class="tablerow"> <!-- inputs -->
-				        <input id="cname" type="text" name="company" value="<?php echo $row['companyName'];?>">
-					<input id="fname" type="text" name="fname" value="<?php echo $row['FName'];?>">
-					<!--<input id="mname" type="text" name="mname" value="<?php echo $row['MName'];?>">-->
-					<input id="lname" type="text" name="lname" value="<?php echo $row['LName'];?>">
-					<!--<input id="pname" type="text" name="" value="<?php echo $row['FName'];?>">-->
-    					<select name="salu">
-						<option value="">---</option>
-						<option value="">Mr.</option>
-						<option value="">Ms.</option>
-						<option value="">Mrs.</option>
-						<option value="">Miss</option>
-						<option value="">Dr.</option>
-						<option value="">Rev.</option>
-					</select>
-				</div> <!-- end row -->
-
-				<table>
-	                            	<tr>
-	                                	<td id="td_1">
-							<div class="tablerow"> <!-- titles -->
-								<span id="hd_address1">Address 1</span>
-							</div> <!-- end row -->
-							<div class="tablerow"> <!-- inputs -->
-								<input id="address1" type="text" name="address1" value="<?php echo $row['address1'];?>">
-							</div> <!-- end row -->
-							<div class="tablerow">
-                        		<span id="hd_address2">Address 2</span>
-                        	</div> <!-- end row -->
-			                <div class="tablerow">
-			                    <input id="address2" type="text" name="address2" value="<?php echo $row['address2'];?>">
-			                </div> <!-- end row -->
-							<div class="tablerow"> <!-- titles -->
-								<span id="hd_city">City</span>
-								<span id="hd_state">State</span>
-								<span id="hd_zip">Zip</span>
-							</div> <!-- end row -->
-							<div class="tablerow"> <!-- inputs -->
-								<input id="city" type="text" name="city" value="<?php echo $row['city'];?>">
-								<select id="state" name="State">
-									<option value="" selected="selected">--</option>
-									<option value="AL">AL</option>
-									<option value="AK">AK</option>
-									<option value="AZ">AZ</option>
-									<option value="AR">AR</option>
-									<option value="CA">CA</option>
-									<option value="CO">CO</option>
-									<option value="CT">CT</option>
-									<option value="DE">DE</option>
-									<option value="DC">DC</option>
-									<option value="FL">FL</option>
-									<option value="GA">GA</option>
-									<option value="HI">HI</option>
-									<option value="ID">ID</option>
-									<option value="IL">IL</option>
-									<option value="IN">IN</option>
-									<option value="IA">IA</option>
-									<option value="KS">KS</option>
-									<option value="KY">KY</option>
-									<option value="LA">LA</option>
-									<option value="ME">ME</option>
-									<option value="MD">MD</option>
-									<option value="MA">MA</option>
-									<option value="MI">MI</option>
-									<option value="MN">MN</option>
-									<option value="MS">MS</option>
-									<option value="MO">MO</option>
-									<option value="MT">MT</option>
-									<option value="NE">NE</option>
-									<option value="NV">NV</option>
-									<option value="NH">NH</option>
-									<option value="NJ">NJ</option>
-									<option value="NM">NM</option>
-									<option value="NY">NY</option>
-									<option value="NC">NC</option>
-									<option value="ND">ND</option>
-									<option value="OH">OH</option>
-									<option value="OK">OK</option>
-									<option value="OR">OR</option>
-									<option value="PA">PA</option>
-									<option value="RI">RI</option>
-									<option value="SC">SC</option>
-									<option value="SD">SD</option>
-									<option value="TN">TN</option>
-									<option value="TX">TX</option>
-									<option value="UT">UT</option>
-									<option value="VT">VT</option>
-									<option value="VA">VA</option>
-									<option value="WA">WA</option>
-									<option value="WV">WV</option>
-									<option value="WI">WI</option>
-									<option value="WY">WY</option>
-								</select>
-								<input id="zip" type="text" name="" value="<?php echo $row['zip'];?>">
-							</div> <!-- end row -->
-                        			</td>
-                        			<td id="td_2">
-                        				<!--<div class="tablerow"> <!-- title -->
-                            				<!--<span id="hd_mphone">Mobile Phone</span>
-										</div> <!-- end row -->
-                        				<!--<div class="tablerow"> <!-- inputs -->
-                           	    			<!--<input id="mphone1" type="text" name=""><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
-										</div> <!-- end row -->
-                            			<!--<div class="tablerow"> <!-- title -->
-                            				<!--<span id="hd_hphone">Home Phone</span>
-                        				</div> <!-- end row -->
-                            			<!--<div class="tablerow"> <!-- inputs -->
-                           	    			<!--<input id="hphone1" type="text" name=""><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
-                      	    			</div> <!-- end row -->
-										<div class="tablerow"> <!-- title -->
-                           		 			<span id="hd_wphone">Primary Phone</span>
-                           		 			<span id="ext">Ext</span>
-										</div> <!-- end row -->
-                            				<div class="tablerow">
-                           		 			<input id="wphone1" type="text" name="" value="<?php echo $row['homePhone'];?>"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
-											<input id="ext" type="text" name="ext" value="<?php echo $row['workPhoneExt'];?>">
-										</div> <!-- end row -->
-                        			</td>
-                        		</tr>
-                      		</table>
 
                       		<!--<div class="tablerow"> <!-- titles -->
 								<!--<span id="hd_bday">Birthday</span>
@@ -344,7 +206,6 @@
 				</div> <!-- end tab1 content -->
 
 
-
 			<div class="interim-form">
 				<div class="interim-header"><h2>Profile Photo</h2></div>
 				<div class="tablerow">
@@ -367,9 +228,25 @@
 
   </div> <!--end content -->
 
-      <?php include 'footer.php' ; ?>
+      <?php include '../footer.php' ; ?>
 </div> <!--end container-->
+<!-- added from index.php -->
 
+<!-- add repsonsive tabs and accordion conversion at small/xs viewport width | full code for this inside responsive-tabs.js file -->
+<script src="js/responsive-tabs.js"></script>
+<script>
+    // show tab content on navtab click events
+    $( 'ul.nav.nav-tabs  a' ).click( function ( e ) {
+        e.preventDefault();
+        $( this ).tab( 'show' );
+        } );
+
+    // convert tabs into accordion dropdown for a clean responsive layout of this content - navtabs look poor on mobile screen
+        ( function( $ ) {
+          // Test for making sure event are maintained
+          fakewaffle.responsiveTabs( [ 'xs', 'sm' ] );
+    } )( jQuery );
+</script>
 </body>
 </html>
 

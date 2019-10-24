@@ -14,8 +14,8 @@
        $table1 = "user_info";
        $table2 = "users";
        $table3 = "distributors";
-        
-        
+
+
 	$upload_msg = "Message: <br />";
 	function isUniqueEmail($link, $table1, $email) {
 		$query = "SELECT * FROM $table1 WHERE email='$email'";
@@ -27,14 +27,14 @@
 			return true;
 		}
 	}
-	
+
 	// check if form has been submitted
 	if(isset($_POST['submit'])){
-	
+
 	$vpPhoto = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/vp/';
 	$vpPicPath = "";
-	
+
 	//grab all form fields
 	$company = mysqli_real_escape_string($link, $_POST['cname']);
 	$fname = mysqli_real_escape_string($link, $_POST['fname']);
@@ -50,15 +50,18 @@
 	$zip = mysqli_real_escape_string($link, $_POST['zip']);
 	$email = mysqli_real_escape_string($link, $_POST['email']);
 	$hPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
-	$hPhone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
-	$wPhone3 = mysqli_real_escape_string($link, $_POST['hphone3']);
-	$mPhone = mysqli_real_escape_string($link, $_POST['mphone']);
+
+//	$hPhone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
+	$wPhone = mysqli_real_escape_string($link, $_POST['wphone1']);
+	$mPhone = mysqli_real_escape_string($link, $_POST['mPhone']);
+
 	$ext = mysqli_real_escape_string($link, $_POST['ext']);
 	$fbPage = mysqli_real_escape_string($link, $_POST['fb']);
 	$twitter = mysqli_real_escape_string($link, $_POST['twitter']);
 	$linkedin = mysqli_real_escape_string($link, $_POST['lindkedin']);
 	$loginPass = mysqli_real_escape_string($link, $_POST['loginpass']);
 	$salesMan = 25403;
+	$id = $userID;
 	$ftin = mysqli_real_escape_string($link, $_POST['ftin1']);
 	$stin = mysqli_real_escape_string($link, $_POST['stin1']);
 	$nonp = mysqli_real_escape_string($link, $_POST['nonp1']);
@@ -69,21 +72,21 @@
 	$landingPage = "vp/vpLanding.php";
 	$who = "VP";
 	$percent = 0.5;
-	$salt = time(); 			// create salt using the current timestamp 
+	$salt = time(); 			// create salt using the current timestamp
 	$loginPass = sha1($loginPass.$salt); 	// encrypt the password and salt with SHA1
 	//$distPic = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/vp/';
 	$imagePath = "";
-	
+
 	  /**  process_image
 	  **	This function will first verify if the file uploaded is an image file.
 	  **	Next, the image will save the file in the desired directory in a folder labeled with the ID from the parameter.
 	  **      Last, the directory path to the image is returned so it can be saved to the database.
 	  **/
-	
+
 	  function process_image($name, $id, $tmpPic, $baseDirPath){
 
-		$cleanedPic = checkName($_FILES["$name"]["name"]);	
+		$cleanedPic = checkName($_FILES["$name"]["name"]);
 		if(!is_image($tmpPic)) {
     			// is not an image
     			$upload_msg .= $cleanedPic . " is not an image file. <br />";
@@ -91,37 +94,37 @@
     			if($_FILES['$name']['error'] > 0) {
 				$upload_msg .= $_FILES['$name']['error'] . "<br />";
 			} else {
-				
+
 				if (file_exists($baseDirPath.$id."/".$cleanedPic)){
 					$imagePath = "images/vp/".$id."/".$cleanedPic;
 				} else {
 					$picDirectory = $baseDirPath;
-					
-					
+
+
 					if (!is_dir($picDirectory.$id)){
 						mkdir($picDirectory.$id);
-						
+
 					}
 					$picDirectory = $picDirectory.$id."/";
 					move_uploaded_file($tmpPic, $picDirectory . $cleanedPic);
 					$upload_msg .= "$cleanedPic uploaded.<br />";
 					$imagePath = "images/vp/".$id."/".$cleanedPic;
-					
-					
+
+
 				}// end third inner else
 				return $imagePath;
 			} // end first inner else
 		      } // end else
 	     }// end process_image
-	    
+
 		//if good email insert data
-	    if(isUniqueEmail($link, $table1, $email)) {
-		$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
-		$query1 .= "VALUES('$email','$loginPass','1','$landingPage','$salt', now(), now(), '$who')";
-		$query2 = "INSERT INTO $table1 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, cellPhone, workPhone, userPaypal,role,title,gender, userBaseCommPct, fedtin, statetin, threec)";
-		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
-        $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, vpID, workPhoneExt,  distPicPath,setupID, role)";
-		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$userID', '$who')";
+	  if(isUniqueEmail($link, $table1, $email)) {
+			$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
+			$query1 .= "VALUES('$email','$loginPass','1','$landingPage','$salt', now(), now(), '$who')";
+			$query2 = "INSERT INTO $table1 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, cellPhone, workPhone, userPaypal,role,title,gender, userBaseCommPct, fedtin, statetin, threec)";
+			$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
+	    $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, vpID, workPhoneExt,  distPicPath,setupID, role)";
+			$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$userID', '$who')";
 
 
 		mysqli_query($link, "start transaction;");
@@ -129,19 +132,19 @@
 		$res1 = mysqli_query($link, $query1)or die ("couldn't execute query 1.".mysqli_error($link));
 		// insert data into distributors table
 		$res2 = mysqli_query($link, $query2)or die ("couldn't execute query 2.".mysqli_error($link));
-		
+
 		$res3 = mysqli_query($link, $query3)or die ("couldn't execute query 3.".mysqli_error($link));
-		
+
 		if($res1 && $res2 && $res3){
 			mysqli_query($link, "commit;");
 			$query9 = "SELECT * FROM user_info WHERE email='$email'";
 			$res4 = mysqli_query($link, $query9)or die ("couldn't execute query 9.".mysqli_error($link));
 			$row = mysqli_fetch_assoc($res4);
 			$newUserID = $row['userInfoID'];
-			
+
 			$queryx = "UPDATE distributors SET loginid = '$newUserID ', distPicPath='$imagePath' WHERE email = '$email'";
 			mysqli_query($link, $queryx)or die ("couldn't execute query x.".mysqli_error($link));
-			
+
 			if($vpPhoto != ''){
 		    $personalPicPath = process_image('uploaded_file',$newUserID, $vpPhoto, $imageDirPath);
 		    if($personalPicPath !=''){
@@ -153,15 +156,15 @@
 			//newDistributorEmail($email,$FName,$LName,$cellPhone);
 			 header( 'Location: viewAccounts.php' );
 
-		} 
+		}
 	}
-		
+
 		else
 		{
             mysqli_query($link, "rollback;");
 			echo "I'm sorry, there was a problem creating your account.";
 			}
-	
+
 
 	}// end if
 ?>
@@ -178,7 +181,7 @@
 
       <div id="content">
           <h1>Add Vice President</h1>
-      	<h3></h3> 
+      	<h3></h3>
      		<div class="table">
 			<form class="" action="addVP.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return validate();">
 				<!--<h3>--Option 1: Add One Business Associate --</h3>
@@ -191,7 +194,7 @@
 						<span id="hd_fm3">Member:</span>
 						<span id="hd_bb3">Business:</span>
 					</div>--> <!-- end row -->
-					
+
 					<!--<div class="tablerow">
 						<select class="role3">
 							<option>Select VP Account</option>
@@ -249,10 +252,10 @@
 						<li><a href="#">Account Login</a></li>
 						<li><a href="#">Profile Photo</a></li>
 					</ul>-->
-					
+
 					<div class="interim-form">
 						<div class="interim-header"><h2>Information</h2></div>
-						
+
 						<!--<span>Position Title:</span>
 						<select name="">
 							<option value="">Select Position Title</option>
@@ -261,21 +264,29 @@
 							<option value=""></option>
 							<option value=""></option>
 						</select>-->
-						
+
 						<div class="tablerow"> <!-- titles -->
-						    <span id="hd_cname">Company Name</span>  									
-							<span id="hd_fname">First</span>
+
 							<!--<span id="hd_mname">Middle</span>-->
-							<span id="hd_lname">Last</span>
+
 							<!--<span id="hd_pname" title="Preferred First Name">Preferred</span>-->
-							<span id="hd_title">Title</span>
 						</div> <!-- end row -->
-						<div class="tablerow"> <!-- inputs -->  
-						         <input id="cname" type="text" name="cname">
+						<div class="tablerow"> <!-- inputs -->
+							<span id="hd_cname">Company Name
+						  <input id="cname" type="text" name="cname">
+							</span>
+							<span id="hd_fname">First
 							<input id="fname" type="text" name="fname">
+							</span>
+							<span id="hd_mname">Middle
+							<input id="mname" type="text" name="mname">
+						</span>
 							<!--<input id="mname" type="text" name="mname">-->
+							<span id="hd_lname">Last
 							<input id="lname" type="text" name="lname">
+							</span>
 							<!--<input id="pname" type="text" name="pname">-->
+							<span id="hd_title">Title
 							<select name="title">
 								<option value="">---</option>
 								<option value="Mr.">Mr.</option>
@@ -285,10 +296,23 @@
 								<option value="Dr.">Dr.</option>
 								<option value="">Rev.</option>
 							</select>
+							</span>
+
+							<span id="hd_gender">Gender
+							<select name="gender">
+								<option value="">---</option>
+								<option value="Male">M</option>
+								<option value="Female">Fe</option>
+								<option value="Decline">N/A</option>
+							</select>
+							</span>
+							<span id="id">ID
+							<input id="id" type="text" name="id">
+						</span>
 						</div> <!-- end row -->
-						
+
 						<br>
-						
+
 						<table>
 							<tr>
 								<td id="td_1">
@@ -302,14 +326,14 @@
 									<div class="tablerow"> <!-- input -->
 										<input id="address1" type="text" name="address1">
 									</div> <!-- end row -->
-									
+
 									<div class="tablerow"> <!-- title -->
 										<span id="hd_address2">Address 2</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- input -->
 										<input id="address2" type="text" name="address2">
 									</div> <!-- end row -->
-													
+
 									<div class="tablerow"> <!-- titles -->
 										<span id="hd_city">City</span>
 										<span id="hd_state">State</span>
@@ -374,14 +398,14 @@
 										<input id="zip" type="text" name="zip" maxlength="5">
 									</div> <!-- end row -->
 								</td>
-									
+
 								<td id="td_2">
-									<!--<div class="tablerow"> <!-- titles -->
-										<!--<span id="hd_mphone">Mobile Phone</span>
+									<div class="tablerow"> <!-- titles -->
+									<span id="hd_mphone">Mobile Phone</span>
 									</div> <!-- end row -->
-									<!--<div class="tablerow"> <!-- inputs -->
-										<!--<input id="mphone1" type="text" name="mphone"><!--<input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">-->
-										<!--<select name="carrier">
+									<div class="tablerow"> <!-- inputs -->
+										<input id="mPhone" type="text" name="mPhone"><!--<input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">-->
+										<select name="carrier">
 											<option>Select Carrier</option>
 											<option value="Verizon">Verizon</option>
 											<option value="AT&T">AT&T</option>
@@ -392,24 +416,26 @@
 											<option value="">Other</option>
 										</select>
 									</div> <!-- end row -->
-									<!--<div class="tablerow">
+									<div class="tablerow">
 										<span id="hd_hphone">Home Phone</span>
 									</div> <!-- end row -->
-									<!--<div class="tablerow">
+									<div class="tablerow">
 										<input id="hphone1" type="text" name="hphone1"><!--<input id="hphone2" type="text" name="hphone2"><input id="hphone3" type="text" name="hphone3">-->
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- titles -->
-										<span id="hd_wphone">Primary Phone</span>
+										<span id="wphone1">Work Phone
+										<input id="wphone1" type="text" name="wphone1"><!--<input id="wphone2" type="text" name="wphone2"><input id="wphone3" type="text" name="">-->
+										<input id="ext" type="text" name="ext">
+										</span>
 										<span id="ext">Ext</span>
 									</div> <!-- end row -->
 									<div class="tablerow">
-										<input id="wphone1" type="text" name="wphone1"><!--<input id="wphone2" type="text" name="wphone2"><input id="wphone3" type="text" name="">-->
-										<input id="ext" type="text" name="ext">
+
 									</div> <!-- end row -->
 								</td>
 							</tr>
 						</table>
-												
+
 						<!--<div class="tablerow"> <!-- titles -->
 							<!--<span id="hd_bday">Birthday</span>
 							<span id="hd_gender">Gender</span>
@@ -574,9 +600,9 @@
 								<option value="female">Female</option>
 								<option value="male">Male</option>
 							</select>
-						</div> <!-- end row -->	
+						</div> <!-- end row -->
 					</div> <!-- end simple tabs content -->
-					
+
 					<div class="interim-form">
 						<div class="interim-header"><h2>Account Login</h2></div>
 						<div id="row"> <!-- titles -->
@@ -585,7 +611,7 @@
 						<div id="row"> <!-- inputs -->
 							<input id="loginemail" type="text" name="email" value="">
 						</div> <!-- end row -->
-						
+
 						<div id="row"> <!-- titles -->
 						<span id="hd_password">Password</span>
 						<span id="hd_cpassword">Confirm Password</span>
@@ -595,7 +621,7 @@
 							<input id="cpassword" type="password" name="cpass" value="">
 						</div> <!-- end row -->
 					</div> <!-- end tab 2 -->
-					
+
 					<div class="interim-form"> <!-- payment tab -->
 					<div class="interim-header"><h2>3 Simple Steps for Payment</h2></div>
 					<h3>1. PayPal Information</h3>
@@ -628,24 +654,24 @@
 					<br>
 					<h3>Vice President Total Commission Override: 0.5%</h3>
 				</div> <!-- end tab3 content (payment) -->
-					
+
 				<div class="interim-form"> <!-- social media tab4 -->
 					<div class="interim-header"><h2>Social Media Connections</h2></div>
-					<div class="tablerow"> 
+					<div class="tablerow">
 						<span id="hd_fb" title="Facebook Name or Profile URL">Facebook</span>
 						<input type="url" id="fb"  name="fb">
 					</div> <!-- end row -->
 					<br>
-					<div class="tablerow"> 
+					<div class="tablerow">
 						<span id="hd_tw" title="Twitter Username or Profile URL">Twitter</span>
 						<input type="url" id="tw" name="twitter">
 					</div> <!-- end row -->
 					<br>
-					<div class="tablerow"> 
+					<div class="tablerow">
 						<span id="hd_li" title="LinkedIn Username or Profile URL">LinkedIn</span>
 						<input type="url" id="li" name="lindkedin">
 					</div> <!-- end row -->
-					<!--<div class="tablerow"> 
+					<!--<div class="tablerow">
 						<span id="hd_pn" title="Pintrest Username or Profile URL">Pintrest</span>
 						<input type="url" id="pn" name="printrest">
 					</div>--> <!-- end row -->
@@ -654,10 +680,10 @@
 						<input type="url" id="gp" name="googleplus">
 					</div>--> <!-- end row -->
 				</div> <!-- end tab4 content (social media) -->
-					
+
 					<div class="interim-form"> <!-- profile pic tab3 -->
 						<div class="interim-header"><h2>Profile Photo</h2></div>
-						<div class="tablerow"> 
+						<div class="tablerow">
 							<span id="">Upload Profile Photo:</span>
 							<input type="file" id="" name="uploaded_file">
 							<input type="submit" class="redbutton" value="Upload Photo">
@@ -667,13 +693,13 @@
 						</div> <!-- end row -->
 					</div> <!-- end tab3 content (profile pic) -->
 				</div> <!-- end simple tabs -->
-				
+
 				<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
-				
+
 			</form>
-			
+
 			<br>
-			
+
 			<!--<form class="graybackground">
 				<h3>--Option 2: Add Multiple Business Associates--</h3>
 				<h2>How To Add Multiple Business Associates</h2><br>
@@ -687,8 +713,8 @@
 			</form>
 		</div> <!-- end table -->
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>

@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    
+
 <?php include 'includes/header.inc.php'; ?>
 <?php include 'navigation/fullSidebar_home.php'; ?>
 
 
     <div class="container">
-    	 <section id="homecards" class="row center-block"> 
+    	 <section id="homecards" class="row center-block">
           <div class="img-card col-xs-12  col-sm-5 col-md-5 col-lg-5" id="img-card-one">
             <!-- link wrapped to allow for image and title to be clicked -->
             <a class="cardlink" href="welcome.php">
@@ -29,7 +29,7 @@
     			     <a href="gettingstarted_sendemail.php"><button class="access btn btn-primary">Learn More!</button></a><!-- refernce tab btns for centering completely -->
               </div> <!--end imgcard-info-->
           </div> <!-- end imgcard -->
-    
+
     	  <!-- link wrapped to allow for image and title to be clicked -->
            <div class="img-card col-xs-12 col-sm-5 col-sm-push-2 col-md-5 col-md-push-2 col-lg-5 col-lg-push-2"  id="img-card-two">
              	<a href="search.php">
@@ -44,7 +44,7 @@
           </div> <!-- end image card -->
         </section> <!-- end section homecards -->
     </div>
-    
+
 
     <section class="container">
         <div class="row">
@@ -56,14 +56,14 @@
             </div>
         </div>
     </section>
-    
+
         <div class="container">
         <div class="panel panel-default" id="info-pannel" style="margin-top:-10.3em;border: 2px solid #cc0000 !important;border-radius: 0px 0px 10px 10px;-webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);/* box-shadow: 0px 2px 13px rgba(0, 0, 0, .75) !important; */">
-            
+
             <!--<div class="panel-heading hidden-sm hidden-xs">-->
             <!--    <h3 class="panel-title">More Information About the GreatMoods Program</h3>-->
             <!--</div>-->
-            
+
             <div class="panel-body">
              <!--Nav tabs -->
                 <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
@@ -73,44 +73,44 @@
                   <li class="test-class"><a class="white" href="#calc">Calculate Your Success!</a></li>
                   <li class="test-class"><a class="white" href="#steps">Steps to Success!</a></li>
                 </ul>
-                
+
                  <!--Tab panes -->
                 <div class="tab-content responsive hidden-xs hidden-sm">
-                    <div class="tab-pane active" id="trends" role="tabpanel" >   
+                    <div class="tab-pane active" id="trends" role="tabpanel" >
                         <p class="card-text">Do you have a quality Online Fundraising Program and appropriate Product for Online Fundraising Sales?</p>
                         <p class="card-text">Products and Gifts from the GreatMoods Mall can be shipped Spring, Summer, Winter or Fall. GreatMoods Fundraising delivers it all. This one Program allows 3 to 5 significant fundraising income opportunities a year, with one simple setup.</p>
                         <p class="card-text">Cash is Deposited Weekly on every order directly into your Group's PayPal Account 24/7/365 days a year.</p>
                         <p class="card-text">Browse our Fundraising Examples from the navigation bar above and see the Future of Fundraising.</p>
                         <a id="tabButton" href="onlinefundraising.php" class="btn btn-primary">Read More</a>
                     </div>
-                    
-                    <div class="tab-pane" id="strengths" role="tabpanel">   
+
+                    <div class="tab-pane" id="strengths" role="tabpanel">
                         <p class="card-text">Learn about the strengths of the GreatMoods Program! There are 10 good reasons to do fundraising online using the GreatMoods Program!</p>
                         <a  id="tabButton" href="program.php" class="btn btn-primary align-content-center">GreatMoods Strengths</a>
                     </div>
-                    <div class="tab-pane " id="mission" role="tabpanel">    
+                    <div class="tab-pane " id="mission" role="tabpanel">
                         <p class="card-text">Our mission statement is simple. Achieving success for your fundraising goals!</p>
                         <a id="tabButton" href="mission.php" class="btn btn-primary">Read Full Mission Statement</a>
                     </div>
 
-                    <div class="tab-pane" id="calc" role="tabpanel">  
+                    <div class="tab-pane" id="calc" role="tabpanel">
                         <p class="card-text">A simple to use calculator that will allow you to find out how much money you can raise using the GreatMoods Program.</p>
                         <a id="tabButton" href="calculator.php" class="btn btn-primary">Use Calculator</a>
                     </div>
                     <div class="tab-pane" id="steps" role="tabpanel">
-                        <p class="card-text">The GreatMoods Program allows all of the Fundraising to take place online with our Simple 3 Step Setup.</p> 
+                        <p class="card-text">The GreatMoods Program allows all of the Fundraising to take place online with our Simple 3 Step Setup.</p>
                         <blockquote class="card-text">Step 1) Setup Website Example</blockquote>
                         <blockquote class="card-text">Step 2) Setup Members Example</blockquote>
                         <blockquote class="card-text">Step 3) Setup E-Mails Example</blockquote>
                         <a id="tabButton" href="easysetup.php" class="btn btn-primary">Learn More About the Steps Involved</a>
                     </div>
                 </div>
-            </div><!--end pannel body--> 
+            </div><!--end pannel body-->
         </div> <!-- end pannel -->
     </div><!--end container  -->
 
 <?php include 'footer.php'; ?>
- 
+
     <!-- add repsonsive tabs and accordion conversion at small/xs viewport width | full code for this inside responsive-tabs.js file -->
     <script src="js/responsive-tabs.js"></script>
     <script>
@@ -119,8 +119,8 @@
             e.preventDefault();
             $( this ).tab( 'show' );
             } );
-        
-        // convert tabs into accordion dropdown for a clean responsive layout of this content - navtabs look poor on mobile screen 
+
+        // convert tabs into accordion dropdown for a clean responsive layout of this content - navtabs look poor on mobile screen
             ( function( $ ) {
               // Test for making sure event are maintained
               fakewaffle.responsiveTabs( [ 'xs', 'sm' ] );

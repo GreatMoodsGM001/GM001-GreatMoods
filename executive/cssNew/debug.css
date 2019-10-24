@@ -1,0 +1,12 @@
+/* To turn on the Debug code, href it in to the head of the wanted html */
+body * {
+  color: hsla(210, 100%, 100%, 0.88) !important;
+  background: hsla(210, 100%, 50%, 0.33) !important;
+  outline: 0.25rem solid hsla(210, 100%, 100%, 0.50) !important;
+}
+
+.debug-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
